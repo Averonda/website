@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectGrepService } from '../services/project-grep/project-grep.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  links: ProjectGrepService = new ProjectGrepService();
+  github:any = this.links.getLinks();
   constructor() { }
 
   ngOnInit(): void {
